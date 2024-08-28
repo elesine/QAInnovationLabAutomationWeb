@@ -1,7 +1,14 @@
 package com.nttdata.steps;
 
 import com.nttdata.page.LoginPageStore;
+import com.nttdata.page.ProductoPageStore;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public class LoginStoreSteps {
@@ -38,6 +45,17 @@ public class LoginStoreSteps {
         this.driver.findElement(LoginPageStore.loginButton).click();
     }
 
-    public void validarLogeo() {
+    public boolean validarLogeo() {
+
+        try {
+            // Esperar hasta que el enlace de "Sign out" sea visible
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebElement logout  =  wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageStore.logout));
+            return logout.isDisplayed();
+        } catch (TimeoutException e) {
+            System.out.println("No se logeo correctamente.");
+            return false; // El enlace no se encontró, por lo que es probable que el usuario no esté autenticado
+        }
     }
+
 }

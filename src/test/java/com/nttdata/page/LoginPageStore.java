@@ -9,5 +9,7 @@ public class LoginPageStore {
     public static By passInput = By.id("field-password");
     public static By loginButton = By.id("submit-login");
     public static By error = By.cssSelector(".alert.alert-danger");
+    public static By logout = By.cssSelector("a.logout.hidden-sm-down");
+
 
 }

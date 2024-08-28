@@ -43,7 +43,8 @@ public class ProductStoreStepsDef {
         loginSteps.typeEmail(email);
         loginSteps.typePassword(password);
         loginSteps.login();
-        //loginSteps.validarLogeo();
+        //Validacion Logeo
+        Assert.assertTrue("No se logeo correctamente", loginSteps.validarLogeo());
         screenShot();
     }
 
