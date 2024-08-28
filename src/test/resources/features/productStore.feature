@@ -13,8 +13,8 @@ Feature: Product-Store
     #And vuelvo a validar el calculo de precios en el carrito
 
     Examples:
-      | usuario | clave | categoria | subcategoria |
-  #      | g.canasa.c@gmail.com | Clave1clave | CLOTHES   | MEN          |
-   #    | novalido@gmail.com   | novalido    | CLOTHES   | MEN          |
+      | usuario              | clave       | categoria | subcategoria |
+      | g.canasa.c@gmail.com | Clave1clave | CLOTHES   | MEN          |
+      | novalido@gmail.com   | novalido    | CLOTHES   | MEN          |
       | g.canasa.c@gmail.com | Clave1clave | CARTS     | MEN          |
 
